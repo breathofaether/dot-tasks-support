@@ -1,0 +1,69 @@
+:root {
+  color-scheme: light dark;
+  --background: #f5f7fb;
+  --surface: #ffffff;
+  --text: #17243b;
+  --muted: #526078;
+  --accent: #1555c5;
+  --line: #dce3ed;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background); color: var(--text); line-height: 1.65; }
+a { color: var(--accent); text-underline-offset: .22em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+.wrap { width: min(960px, calc(100% - 48px)); margin-inline: auto; }
+.skip-link { position: absolute; left: 16px; top: 12px; padding: 8px 16px; background: var(--surface); transform: translateY(-180%); z-index: 1; }
+.skip-link:focus { transform: translateY(0); }
+.site-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 28px; border-bottom: 1px solid var(--line); }
+.brand { font-size: 30px; font-weight: 750; letter-spacing: -.07em; text-decoration: none; color: var(--text); }
+nav { display: flex; flex-wrap: wrap; gap: 8px; }
+nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 14px; text-decoration: none; border-radius: 24px; font-size: 15px; }
+nav a[aria-current="page"] { background: var(--surface); box-shadow: 0 1px 4px #17243b0a; color: var(--text); }
+.hero { padding-block: 64px 36px; }
+.eyebrow { margin: 0 0 14px; font-size: 12px; font-weight: 700; letter-spacing: .17em; color: var(--accent); }
+h1 { margin: 0; max-width: 800px; font-size: clamp(38px, 6vw, 64px); font-weight: 750; line-height: 1.1; letter-spacing: -.055em; }
+h2 { margin: 0 0 10px; font-size: 23px; line-height: 1.3; letter-spacing: -.025em; }
+h3 { margin: 0 0 8px; font-size: 18px; line-height: 1.4; }
+p { margin: 0 0 14px; }
+.intro { max-width: 540px; margin: 22px 0 0; color: var(--muted); font-size: 18px; }
+.contact-card { display: grid; grid-template-columns: 1fr auto; gap: 20px 32px; align-items: center; padding: 32px; border: 1px solid var(--line); border-radius: 24px; background: var(--surface); }
+.contact-card p, .help-grid p { color: var(--muted); margin-bottom: 0; }
+.button { display: inline-flex; justify-content: center; gap: 14px; align-items: center; min-height: 48px; padding: 12px 20px; background: var(--accent); color: white; font-weight: 600; text-decoration: none; border-radius: 24px; }
+.button:hover { opacity: .9; }
+.email { grid-column: 1 / -1; font-size: 14px; overflow-wrap: anywhere; }
+.help-section { margin-block: 48px; }
+.help-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
+.help-grid article { padding-block: 24px; border-bottom: 1px solid var(--line); }
+.privacy-note { max-width: 720px; color: var(--muted); font-size: 14px; margin-bottom: 48px; }
+.site-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; padding-block: 24px 36px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+.site-footer p { margin: 0; }
+.updated { margin: 18px 0 0; color: var(--muted); font-size: 14px; }
+.policy-body { max-width: 720px; padding: 32px; background: var(--surface); border: 1px solid var(--line); border-radius: 24px; overflow-wrap: anywhere; }
+.policy-body section + section { margin-top: 32px; }
+.policy-body p { color: var(--muted); }
+.policy-body p:last-child { margin-bottom: 0; }
+.back-link { display: inline-flex; align-items: center; min-height: 44px; margin-block: 28px 44px; }
+@media (max-width: 600px) {
+  .wrap { width: calc(100% - 36px); }
+  .site-header { padding-block: 18px; gap: 8px; }
+  nav { gap: 0; }
+  nav a { padding-inline: 12px; }
+  .hero { padding-block: 44px 30px; }
+  .contact-card { grid-template-columns: 1fr; padding: 24px; }
+  .button { justify-self: start; }
+  .help-grid { grid-template-columns: 1fr; }
+  .policy-body { padding: 24px; }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #101722;
+    --surface: #192331;
+    --text: #eff4fd;
+    --muted: #b1bfd2;
+    --accent: #9cc0ff;
+    --line: #334254;
+  }
+  .button { color: #102347; }
+}
